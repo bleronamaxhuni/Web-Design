@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="company_logo" href="./index.html"><img src="./img/letter-b.png" alt=""></a>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="navbar_toggler">
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="home">
+                <div class="home_section">
+                    <div class="what_we_do">
+                        <h1 class="home_tittle">We build creative and beautiful websites</h1>
+                        <p class="home_info">We strongly believe that communication, trust and transparency are the
+                            essential elements of successful business relationship</p>
+                    </div>
+                </div>
+                <div class="cube_design">
+                    <img src="./img/cube-3d.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="service_section">
+                <h1 class="service_tittle">Our Services</h1>
+                <p class="service_info">We feel very strong when it comes to planning, desinging and coding applications.</p>
+                <div class="service_card">
+                    <div class="card">
+                        <h1 class="card_tittle">Web & Mobile Apps</h1>
+                    </div>
+                    <div class="card">
+                        <h1 class="card_tittle">Responsivity</h1>
+                    </div>
+                    <div class="card">
+                        <h1 class="card_tittle">UI & UX Design</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h1 class="about_tittle">About Us</h1>
+            <br>
+            <hr>
+            <div class="about_section">
+                <div class="card programming_language">
+                    <div class="lang_icon"><img src="./img/html-5.png" alt=""></div>
+                    <div class="lang_icon"><img src="./img/css-3.png" alt=""></div>
+                    <div class="lang_icon"><img src="./img/js-file.png" alt=""></div>
+                    <div class="lang_icon"><img src="./img/wordpress.png" alt=""></div>
+                    <div class="lang_icon"><img src="./img/php.png" alt=""></div>
+                </div>
+                <div class="card github">
+                    <h1 class="card_tittle">GitHub Account</h1>
+                    <a class="github_link" href="https://github.com/bleronamaxhuni">bleronamaxhuni - github</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <br>
+            <h1 class="contact_tittle">Contact Us</h1>
+            <br>
+            <hr>
+            <div class="form_container">
+                <div class="left_container">
+                    <div class="left_inner_container">
+                        <h2>Let's Chat</h2>
+                        <p>Whether you have a question, want to start a project or simply want to connect.</p>
+                        <br>
+                        <p>Feel free to send me a message in the contact form</p>
+                    </div>
+                </div>
+                <div class="right_container">
+                    <div class="right_inner_container">
+                        <form action="#">
+                            <div class="social-container">
+                                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <input type="text" placeholder="Name *" />
+                            <input type="email" placeholder="Email *" />
+                            <input type="text" placeholder="Company" />
+                            <input type="phone" placeholder="Phone" />
+                            <textarea rows="4" placeholder="Message"></textarea>
+                            <button>Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="card_footer">
+                    <div class="footer_tittle">Menu</div>
+                    <ul class="footer_links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <hr class="hr">
+                <div class="card_footer">
+                    <div class="footer_tittle">Address</div>
+                    <ul class="footer_links">
+                        <li><a href="#map">Our Building, Prishtina 10000</a></li>
+                    </ul>
+                </div>
+                <hr class="hr">
+                <div class="card_footer">
+                    <div class="footer_tittle">Follow Us</div>
+                    <ul class="footer_links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <p class="copyright">Copyright @ 2022</p>
+        </div>
+    </footer>
+
+    <script>
+        //  Responsive Navbar 
+        const navbarToggler = document.querySelector(".navbar_toggler");
+        const navbarMenu = document.querySelector(".navbar ul");
+        const navbarLinks = document.querySelectorAll(".navbar a");
+
+        navbarToggler.addEventListener("click", navbarTogglerClick);
+
+        function navbarTogglerClick() {
+            navbarToggler.classList.toggle("open-navbar-toggler");
+            navbarMenu.classList.toggle("open");
+        }
+
+        navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+
+        function navbarLinkClick() {
+            if (navbarMenu.classList.contains("open")) {
+                navbarToggler.click();
+            }
+        }
+    </script>
+</body>
+</html>
